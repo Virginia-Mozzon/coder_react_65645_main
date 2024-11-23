@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import Button from '../Button/Button'
-import { getProducts, getProductsByCategory } from '../../data/backend-falso'
-import ItemList from "./ItemList"
+import React, { useEffect, useState } from 'react';
+import Button from '../Button/Button';
+import { getProducts, getProductsByCategory } from '../../data/backend-falso';
+import ItemList from "./ItemList";
  
-const ItemListContainer = ( {mensaje, fn} ) => {
+
+const ItemListContainer = ( {fn, valor} ) => {
   const[products, setProducts] = useState([])
   const[genero, setGenero] = useState("")
-  const [cargando, setCargando] = useState(false)
+  // const [cargando, setCargando] = useState(false)
   
   
   useEffect( () =>{
@@ -15,18 +16,24 @@ const ItemListContainer = ( {mensaje, fn} ) => {
     
     
     
-    setCargando(true)
+    // setCargando(true)
 
     if(genero){
       getProductsByCategory(genero)
       .then(res => setProducts(res))
       .catch(e => console.error(e))
-      .finally(setCargando(false))
+      .finally(
+        //setCargando(false)
+        console.log("Se proceso promesa con filtro")
+      )
     }else{
       getProducts()
       .then(res => setProducts(res))
       .catch(e => console.error(e))
-      .finally(setCargando(false))
+      .finally(
+        //setCargando(false)
+        console.log("Se proceso promesa sin filtro")
+      )
     }
   }, [genero] )
 
@@ -38,9 +45,7 @@ const ItemListContainer = ( {mensaje, fn} ) => {
 
   return (
     <>
-    <div>
-      <Button text="Agregar al carrito" color="violet" fn={fn}/>
-    </div>
+    
     <div>
       <div>
         <Button fn={ () => changeGenero("romance")} text={"romance"} color={"green"}/>
@@ -48,7 +53,8 @@ const ItemListContainer = ( {mensaje, fn} ) => {
         <Button fn={ () => changeGenero("ficcion")} text={"ficcion"} color={"green"}/>
         <Button fn={ () => changeGenero("")} text={"todos"} color={"green"}/>
       </div>
-      {cargando? <h3>Cargando...</h3> : <ItemList products={products}/>}
+      {/* {cargando? <h3>Cargando...</h3> : <ItemList products={products}/>} */}
+      <ItemList products={products} fn={fn} valor={valor}/>
     </div>
     </>
   )
