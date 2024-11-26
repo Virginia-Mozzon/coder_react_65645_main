@@ -13,13 +13,15 @@ const ProductDetail = () => {
 
   return (
     <>
-      <h1>Vista de Detalle de producto {id}</h1>
-      <p>ID: {product.id}</p>
-      <h3>Nombre: {product.nombre}</h3>
+      <h1>{product.nombre}</h1>
       <img src={product.img} alt="" />
-      <p>Descripcion: {product.descripcion}</p>
-      <p>Categoria: {product.genero}</p>
-      <p>Precio ${product.precio}</p>
+      <h2>{product.autor}</h2>
+      <h2>${product.precio}</h2>
+
+      <h3>Descripción</h3>
+      <p>Categoría: {product.genero}</p>
+      <p>Sinopsis: {product.sinopsis}</p>
+      <p>Tapa: {product.tapa}, Páginas: {product.paginas}, idioma: {product.idioma}</p>
     </>
   )
 }

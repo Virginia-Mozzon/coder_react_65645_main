@@ -48,10 +48,10 @@ const ItemListContainer = ( {fn, valor} ) => {
     
     <div>
       <div>
-        <Button fn={ () => changeGenero("romance")} text={"romance"} color={"green"}/>
-        <Button fn={ () => changeGenero("terror")} text={"terror"} color={"green"}/>
-        <Button fn={ () => changeGenero("ficcion")} text={"ficcion"} color={"green"}/>
-        <Button fn={ () => changeGenero("")} text={"todos"} color={"green"}/>
+        <Button fn={ () => changeGenero("romance")} text={"Romance"} color={"green"}/>
+        <Button fn={ () => changeGenero("terror")} text={"Terror"} color={"green"}/>
+        <Button fn={ () => changeGenero("ficción")} text={"Ficción"} color={"green"}/>
+        <Button fn={ () => changeGenero("")} text={"Todos"} color={"green"}/>
       </div>
       {/* {cargando? <h3>Cargando...</h3> : <ItemList products={products}/>} */}
       <ItemList products={products} fn={fn} valor={valor}/>

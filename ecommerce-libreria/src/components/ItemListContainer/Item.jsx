@@ -5,7 +5,7 @@ import Button from '../Button/Button.jsx'
 const Item = ({elemento, fn, valor}) => {
   return (
     <div>
-        <h3>{elemento.nombre}</h3>
+        <h3>{elemento.nombre} - {elemento.autor}</h3>
         <img src={elemento.img} alt="Tapa-libro" width={"300px"} height={"400px"} />
         <p>Género: {elemento.genero}</p>
         <p>$ {elemento.precio}</p>
