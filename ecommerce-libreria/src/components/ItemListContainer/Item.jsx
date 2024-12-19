@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button.jsx'
 
-const Item = ({elemento, fn, valor}) => {
+const Item = ({elemento}) => {
   return (
     <div>
         <h3>{elemento.nombre} - {elemento.autor}</h3>
@@ -10,7 +10,6 @@ const Item = ({elemento, fn, valor}) => {
         <p>Género: {elemento.genero}</p>
         <p>$ {elemento.precio}</p>
         <button><Link to={`/productos/${elemento.id}`}>Más detalles</Link> </button>
-        <Button text="Agregar al carrito" color="violet" fn={fn} valor={valor}/>
             
     </div>
   )

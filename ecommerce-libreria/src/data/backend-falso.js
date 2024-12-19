@@ -4,7 +4,7 @@ const base_de_datos = [
         nombre: "En Agosto nos vemos",
         autor: "Gabriel García Márquez",
         precio: 19999,
-        genero: "ficción",
+        genero: "Ficción",
         img: "/img/libro1.webp",
         tapa: "blanda",
         paginas: 145,
@@ -16,7 +16,7 @@ const base_de_datos = [
         nombre: "Por culpa de Miss Bridgerton",
         autor: "Julia Quinn",
         precio: 32200,
-        genero: "romance",
+        genero: "Romance",
         img: "/img/libro2.webp",
         tapa: "blanda",
         paginas: 288,
@@ -28,7 +28,7 @@ const base_de_datos = [
         nombre: "Blackwater (Parte III): La casa",
         autor: "Michael McDowell",
         precio: 14999,
-        genero: "terror",
+        genero: "Terror",
         img: "/img/libro3.webp",
         tapa: "dura",
         paginas: 272,
@@ -40,7 +40,7 @@ const base_de_datos = [
         nombre: "La sangre manda",
         autor: "Stephen King",
         precio: 33199,
-        genero: "terror",
+        genero: "Terror",
         img: "/img/libro4.webp",
         tapa: "blanda",
         paginas: 464,
@@ -52,7 +52,7 @@ const base_de_datos = [
         nombre: "Pride and Prejudice",
         autor: "Jane Austen",
         precio: 24900,
-        genero: "romance",
+        genero: "Romance",
         img: "/img/libro5.webp",
         tapa: "dura",
         paginas: 450,
@@ -75,7 +75,7 @@ export const getProductsByCategory = (genero) => {
         setTimeout( ()=> {
             res(base_de_datos.filter(e => e.genero === genero));
             rej("error") 
-        }, 3000);
+        }, 1500);
     })
 }
 
