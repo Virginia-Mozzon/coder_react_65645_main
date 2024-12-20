@@ -3,7 +3,7 @@ import Item from './Item';
 
 const ItemList = ( {products } ) => {
     return (
-        <div>
+        <div className='d-flex flex-wrap justify-content-around'>
             
             { products.map ( (elemento) => {
                 return(

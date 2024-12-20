@@ -3,15 +3,12 @@ import React from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import GenreButtons from '../GenreButtons/GenreButtons';
 
-
-
 const NavBar = () => {
   return (
-    <div>
-      <h1>Entre Líneas</h1>
-      <Link to={genre}><img src="./img/logo.png" alt="Logo Entre Líneas. Libro abierto con nombre del sitio por debajo." /></Link>
+    <div className='navbar navbar-expand-lg bg-body-tertiary '>
+      <Link to={'/'}><img src="./img/logo.png" alt="Logo Entre Líneas. Libro abierto con nombre del sitio por debajo." /></Link>
       <GenreButtons />
-      <CartWidget valor ={0} />
+      <Link to={'/cart'}><CartWidget/></Link>
     </div>
   )
 }

@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Button = ( {text, color, id, to} ) => {
+const Button = ( {text, color, to} ) => {
   return (
-    <button style = {{backgroundColor: color}} ><Link to={to} key={id} >{text}</Link></button>
+    <button className='nav-item' style = {{backgroundColor: color}} ><Link to={to}>{text}</Link></button>
   )
 } 
 
